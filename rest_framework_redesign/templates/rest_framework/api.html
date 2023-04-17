@@ -132,7 +132,7 @@
     </section>
 
     {% block request_forms %}
-      <section class="d-flex align-items-center justify-content-end gap-4 mb-4" aria-label="{% translate 'Request form' %}">
+      <section class="d-grid d-md-flex align-items-lg-center justify-content-lg-end gap-4 mb-4" aria-label="{% translate 'Request form' %}">
         {% if 'GET' in allowed_methods %}
           <form id="get-form">
             <fieldset>
@@ -179,7 +179,7 @@
 
         {% if options_form %}
           <form class="button-form" action="{{ request.get_full_path }}" data-method="OPTIONS">
-            <button type="submit" class="btn btn-lg btn-secondary" title="Make an OPTIONS request on the {{ name }} resource">
+            <button type="submit" class="btn btn-lg btn-secondary w-100" title="Make an OPTIONS request on the {{ name }} resource">
               <strong>
                 {% translate "OPTIONS" %}
               </strong>
@@ -188,7 +188,7 @@
         {% endif %}
 
         {% if delete_form %}
-          <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+          <button type="button" class="btn btn-lg btn-danger w-100" data-bs-toggle="modal" data-bs-target="#deleteModal"
             title="Make a DELETE request on the {{ name }} resource">
             <strong>
               {% translate "DELETE" %}
@@ -230,7 +230,7 @@
 
         {% if extra_actions %}
           <div class="dropdown" style="float: right; margin-right: 10px">
-            <button class="btn btn-lg btn-info" id="extra-actions-menu" data-bs-toggle="dropdown" aria-haspopup="true"
+            <button class="btn btn-lg btn-info w-100" id="extra-actions-menu" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
               <strong>
                 {% translate "Extra Actions" %}
