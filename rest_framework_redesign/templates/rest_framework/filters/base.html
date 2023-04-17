@@ -1,0 +1,21 @@
+<div class="modal fade" id="filtersModal" tabindex="-1" aria-labelledby="filters" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-3 rounded-3 shadow">
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title" id="filters">
+          Filters
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-grid gap-4">
+          {% for element in elements %}
+            <div>
+              {{ element }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

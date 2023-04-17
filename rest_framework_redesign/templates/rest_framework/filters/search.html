@@ -1,0 +1,19 @@
+{% load i18n %}
+<h2>{% translate "Search" %}</h2>
+
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input
+        type="search"
+        class="form-control"
+        name="{{ param }}"
+        value="{{ term }}"
+      />
+      <button class="btn btn-lg btn-outline-primary" type="submit">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <strong> {% translate "Search" %} </strong>
+      </button>
+    </div>
+  </div>
+</form>

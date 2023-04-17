@@ -1,0 +1,55 @@
+{% load i18n rest_framework %}
+
+{% translate "None" as none_choice %}
+
+<div class="mb-4">
+  <div class="form-check">
+    <input
+      type="radio"
+      name="{{ field.name }}"
+      class="form-check-input"
+      id="{{ field.name }}"
+      {% if not field.value %}checked{% endif %}
+    />
+    {% if field.label %}
+      <label
+        class="form-label {% if style.hide_label %}sr-only{% endif %}"
+        for="{{ field.name }}"
+      >
+        {% if field.allow_null or field.allow_blank %}
+          {{ none_choice }}
+        {% else %}
+          {{ field.label }}
+        {% endif %}
+      </label>
+    {% endif %}
+  </div>
+
+  {% for key, text in field.choices|items %}
+    <div class="form-check">
+      <input type="radio" name="{{ field.name }}" class="form-check-input"
+      id="{{ field.name }}" value="{{ key }}" {% if key|as_string == field.value|as_string %}checked{% endif %} />
+
+      {% if field.label %}
+        <label
+          for="{{ field.name }}"
+          class="form-label {% if style.hide_label %}sr-only{% endif %}"
+        >
+          {{ text }}
+        </label>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <div role="alert" class="alert alert-warning mb-3">
+        <p>{{ error }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  {% if field.help_text %}
+    <small class="d-block text-muted">{{ field.help_text|safe }}</small>
+  {% endif %}
+</div>

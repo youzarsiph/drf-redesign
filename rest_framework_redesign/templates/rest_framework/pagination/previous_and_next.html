@@ -1,0 +1,29 @@
+<nav aria-label="Pagination">
+  <ol class="pagination flex-wrap">
+    {% if previous_url %}
+      <li class="page-item">
+        <a href="{{ previous_url }}" class="page-link">
+          &laquo; Previous
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a href="#" class="page-link">
+          &laquo; Previous
+        </a>
+      </li>
+    {% endif %}
+
+    {% if next_url %}
+      <li class="page-item">
+        <a class="page-link" href="{{ next_url }}">Next &raquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">
+          Next &raquo;
+        </a>
+      </li>
+    {% endif %}
+  </ol>
+</nav>

@@ -1,0 +1,13 @@
+{% load rest_framework %}
+
+<fieldset>
+  {% if field.label %}
+    <div class="mb-4 border-bottom">
+      <legend class="form-label border-bottom-0 {% if style.hide_label %}sr-only{% endif %}">
+        {{ field.label }}
+      </legend>
+    </div>
+  {% endif %}
+
+  <p>Lists are not currently supported in HTML input.</p>
+</fieldset>

@@ -1,0 +1,33 @@
+<div class="mb-4">
+  <div class="form-check">
+    <input
+      value="true"
+      type="checkbox"
+      id="{{ field.name }}"
+      name="{{ field.name }}"
+      {% if field.value %}checked{% endif %}
+      class="form-check-input {% if field.errors %}is-invalid{% endif %}"
+    />
+
+    {% if field.label %}
+      <label
+        for="{{ field.name }}"
+        class="form-check-label {% if style.hide_label %}sr-only{% endif %}"
+      >
+        {{ field.label }}
+      </label>
+    {% endif %}
+
+    {% if field.errors %}
+      {% for error in field.errors %}
+        <div role="alert" class="alert alert-warning mb-3">
+          <p>{{ error }}</p>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if field.help_text %}
+      <small class="d-block text-muted">{{ field.help_text|safe }}</small>
+    {% endif %}
+  </div>
+</div>
