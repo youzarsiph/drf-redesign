@@ -1,8 +1,6 @@
-{% load rest_framework %}
-{% load i18n %}
+{% load i18n rest_framework %}
 
-<h2>{% translate "Ordering" %}</h2>
-
+<h5>{% translate "Ordering" %}</h5>
 <ul class="card card-body rounded-3 list-group">
   {% for key, label in options %}
     <li class="list-group-item border-0 px-4">
