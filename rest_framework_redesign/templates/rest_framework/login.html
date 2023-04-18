@@ -19,61 +19,61 @@
 
 {% block body %}
   <body class="container">
-  <div style="height: 100vh" class="d-flex align-items-center justify-content-center">
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="card rounded-4 shadow">
-        <div class="card-header bg-danger rounded-top-4"></div>
-        <main class="card-body gap-4 p-5">
-          {% block branding %}
-            <h3 class="mb-4">
-              {% translate "Django REST framework" %}
-            </h3>
-          {% endblock %}
+    <div style="height: 100vh" class="d-flex align-items-center justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card rounded-4 shadow">
+          <div class="card-header bg-danger rounded-top-4"></div>
+          <main class="card-body gap-4 p-5">
+            {% block branding %}
+              <h3 class="mb-4">
+                {% translate "Django REST framework" %}
+              </h3>
+            {% endblock %}
 
-          <form action="{% url 'rest_framework:login' %}" role="form" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}" />
+            <form action="{% url 'rest_framework:login' %}" role="form" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ next }}" />
 
-            <div class="form-floating mb-4">
-              <input type="text" name="username" maxlength="150" class="form-control {% if form.username.errors %}is-invalid{% endif %}"
-                id="id_username" placeholder="Username" required autofocus {% if form.username.value %}value="{{ form.username.value }}"{% endif %}>
-              <label for="id_username">{{ form.username.label }}</label>
-              {% if form.username.errors %}
-                <small class="d-block text-muted" class="invalid-feedback">
-                  {{ form.username.errors|striptags }}
-                </small>
+              <div class="form-floating mb-4">
+                <input type="text" name="username" maxlength="150" class="form-control {% if form.username.errors %}is-invalid{% endif %}"
+                  id="id_username" placeholder="Username" required autofocus {% if form.username.value %}value="{{ form.username.value }}"{% endif %}>
+                <label for="id_username">{{ form.username.label }}</label>
+                {% if form.username.errors %}
+                  <small class="d-block text-muted" class="invalid-feedback">
+                    {{ form.username.errors|striptags }}
+                  </small>
+                {% endif %}
+              </div>
+
+              <div class="form-floating mb-4">
+                <input type="password" name="password" maxlength="128" class="form-control  {% if form.username.errors %}is-invalid{% endif %}"
+                  id="id_password" required placeholder="Password">
+                <label for="id_password">{{ form.password.label }}</label>
+                {% if form.password.errors %}
+                  <small class="d-block text-muted" class="invalid-feedback">
+                    {{ form.password.errors|striptags }}
+                  </small>
+                {% endif %}
+              </div>
+
+              {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                  <div class="alert alert-warning" role="alert">{{ error }}</div>
+                {% endfor %}
               {% endif %}
-            </div>
 
-            <div class="form-floating mb-4">
-              <input type="password" name="password" maxlength="128" class="form-control  {% if form.username.errors %}is-invalid{% endif %}"
-                id="id_password" required placeholder="Password">
-              <label for="id_password">{{ form.password.label }}</label>
-              {% if form.password.errors %}
-                <small class="d-block text-muted" class="invalid-feedback">
-                  {{ form.password.errors|striptags }}
-                </small>
-              {% endif %}
-            </div>
-
-            {% if form.non_field_errors %}
-              {% for error in form.non_field_errors %}
-                <div class="alert alert-warning" role="alert">{{ error }}</div>
-              {% endfor %}
-            {% endif %}
-
-            <button type="submit" class="btn btn-lg btn-primary w-100">
-              <strong class="d-flex align-items-center gap-3">
-                <i class="bi bi-box-arrow-in-right"></i>
-                {% translate "Login" %}
-              </strong>
-            </button>
-          </form>
-        </main>
-        <div class="card-footer bg-danger rounded-bottom-4"></div>
+              <button type="submit" class="btn btn-lg btn-primary w-100">
+                <strong class="d-flex align-items-center justify-content-center gap-3">
+                  <i class="bi bi-box-arrow-in-right"></i>
+                  {% translate "Login" %}
+                </strong>
+              </button>
+            </form>
+          </main>
+          <div class="card-footer bg-danger rounded-bottom-4"></div>
+        </div>
       </div>
     </div>
-  </div>
   </body>
 {% endblock %}
 

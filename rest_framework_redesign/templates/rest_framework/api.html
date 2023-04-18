@@ -21,8 +21,8 @@
 
 {% block navbar %}
   <header class="fixed-top">
-    <div class="bg-danger pt-2">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow pb-3 {% block bootstrap_navbar_variant %}{% endblock %}"
+    <div class="bg-danger py-2 shadow">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark {% block bootstrap_navbar_variant %}{% endblock %}"
         role="navigation" aria-label="{% translate 'navbar' %}">
         <div class="container">
           {% block branding %}
@@ -42,7 +42,7 @@
               <li class="nav-item">
                 <a href="https://www.django-rest-framework.org/" class="nav-link">
                   <strong class="d-flex align-items-center gap-3">
-                    <i class="bi house-fill"></i>
+                    <i class="bi bi-house-fill"></i>
                     {% translate "Home" %}
                   </strong>
                 </a>
@@ -151,11 +151,12 @@
                 <div class="btn-group w-100" role="group">
                   <a class="btn btn-lg btn-primary w-100" href="{{ request.get_full_path }}" rel="nofollow"
                     title="Make a GET request on the {{ name }} resource">
-                    <strong>
+                    <strong class="d-flex align-items-center justify-content-center gap-4">
+                      <i class="bi bi-arrow-clockwise"></i>
                       {% translate "GET" %}
                     </strong>
                   </a>
-                  <button class="btn btn-lg btn-outline-primary w-25 dropdown-toggle" type="button" id="dropdownMenuButtonSM"
+                  <button class="btn btn-lg btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButtonSM"
                     data-bs-toggle="dropdown" aria-expanded="false"></button>
                   <div class="dropdown">
                     <ul class="dropdown-menu dropdown-menu-end rounded-3 shadow" aria-labelledby="dropdownMenuButtonSM">
@@ -179,7 +180,8 @@
               {% else %}
                 <a class="btn btn-lg btn-primary" href="{{ request.get_full_path }}" rel="nofollow"
                   title="Make a GET request on the {{ name }} resource">
-                  <strong>
+                  <strong class="d-flex align-items-center justify-content-center gap-4">
+                    <i class="bi bi-arrow-clockwise"></i>
                     {% translate "GET" %}
                   </strong>
                 </a>
@@ -191,7 +193,7 @@
         {% if options_form %}
           <form class="button-form" action="{{ request.get_full_path }}" data-method="OPTIONS">
             <button type="submit" class="btn btn-lg btn-secondary w-100" title="Make an OPTIONS request on the {{ name }} resource">
-              <strong class="d-flex align-items-center gap-3">
+              <strong class="d-flex align-items-center justify-content-center gap-3">
                 <i class="bi bi-info-square"></i>
                 {% translate "OPTIONS" %}
               </strong>
@@ -202,7 +204,7 @@
         {% if delete_form %}
           <button type="button" class="btn btn-lg btn-danger w-100" data-bs-toggle="modal" data-bs-target="#deleteModal"
             title="Make a DELETE request on the {{ name }} resource">
-            <strong class="d-flex align-items-center gap-3">
+            <strong class="d-flex align-items-center justify-content-center gap-3">
               <i class="bi bi-trash"></i>
               {% translate "DELETE" %}
             </strong>
@@ -245,7 +247,7 @@
           <div class="dropdown" style="float: right; margin-right: 10px">
             <button class="btn btn-lg btn-info w-100" id="extra-actions-menu" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
-              <strong class="d-flex align-items-center gap-3">
+              <strong class="d-flex align-items-center justify-content-center gap-3">
                 <i class="bi bi-three-dots"></i>
                 {% translate "Extra Actions" %}
               </strong>
@@ -264,7 +266,7 @@
 
         {% if filter_form %}
           <button data-bs-toggle="modal" data-bs-target="#filtersModal" class="btn btn-lg btn-success">
-            <strong class="d-flex align-items-center gap-3">
+            <strong class="d-flex align-items-center justify-content-center gap-3">
               <i class="bi bi-filter"></i>
               {% translate "Filters" %}
             </strong>
@@ -281,7 +283,7 @@
           </div>
 
           <div class="response-info" aria-label="{% translate 'response info' %}">
-            <pre class="prettyprint"><div class="language-http bg-light rounded-4 mb-4"><div><strong>HTTP {{ response.status_code }} {{ response.status_text }}</strong></div>{% for key, val in response_headers|items %}<div><strong>{{ key }}:</strong> <span class="lit">{{ val|break_long_headers|urlize }}</span></div>{% endfor %}</div><code class="language-json bg-light rounded-4">{{ content|urlize }}</code></pre>
+            <pre class="prettyprint"><div class="language-http bg-light rounded-4 mb-4 p-3"><div><strong>HTTP {{ response.status_code }} {{ response.status_text }}</strong></div>{% for key, val in response_headers|items %}<div><strong>{{ key }}:</strong> <span class="lit">{{ val|break_long_headers|urlize }}</span></div>{% endfor %}</div><code class="language-json bg-light rounded-4">{{ content|urlize }}</code></pre>
           </div>
         </div>
       </section>
@@ -296,7 +298,7 @@
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active rounded-5" id="form-tab" data-bs-toggle="tab" data-bs-target="#form"
                       type="button" role="tab" aria-controls="form" aria-selected="true">
-                      <strong class="d-flex align-items-center gap-3">
+                      <strong class="d-flex align-items-center justify-content-center gap-3">
                         <i class="bi bi-filetype-html"></i>
                         {% translate 'HTML form' %}
                       </strong>
@@ -305,7 +307,7 @@
                   <li class="nav-item" role="presentation">
                     <button class="nav-link rounded-5" id="raw-tab" data-bs-toggle="tab" data-bs-target="#raw"
                       type="button" role="tab" aria-controls="raw" aria-selected="false">
-                      <strong class="d-flex align-items-center gap-3">
+                      <strong class="d-flex align-items-center justify-content-center gap-3">
                         <i class="bi bi-filetype-json"></i>
                         {% translate 'Raw data' %}
                       </strong>
@@ -325,7 +327,7 @@
                           {{ post_form }}
                           <div class="form-actions">
                             <button class="btn btn-lg btn-primary w-100" title="Make a POST request on the {{ name }} resource">
-                              <strong class="d-flex align-items-center gap-3">
+                              <strong class="d-flex align-items-center justify-content-center gap-3">
                                 <i class="bi bi-send-fill"></i>
                                 {% translate "POST" %}
                               </strong>
@@ -344,7 +346,7 @@
                         {% include "rest_framework/raw_data_form.html" %}
                         <div class="form-actions">
                           <button class="btn btn-lg btn-primary w-100" title="Make a POST request on the {{ name }} resource">
-                            <strong class="d-flex align-items-center gap-3">
+                            <strong class="d-flex align-items-center justify-content-center gap-3">
                               <i class="bi bi-send-fill"></i>
                               {% translate "POST" %}
                             </strong>
@@ -366,7 +368,7 @@
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active rounded-5" id="form-tab" data-bs-toggle="tab" data-bs-target="#put-object-form"
                       type="button" role="tab" aria-controls="form" aria-selected="true">
-                      <strong class="d-flex align-items-center gap-3">
+                      <strong class="d-flex align-items-center justify-content-center gap-3">
                         <i class="bi bi-filetype-html"></i>
                         {% translate 'HTML form' %}
                       </strong>
@@ -375,7 +377,7 @@
                   <li class="nav-item" role="presentation">
                     <button class="nav-link rounded-5" id="raw-tab" data-bs-toggle="tab" data-bs-target="#put-generic-content-form"
                       type="button" role="tab" aria-controls="raw" aria-selected="false">
-                      <strong class="d-flex align-items-center gap-3">
+                      <strong class="d-flex align-items-center justify-content-center gap-3">
                         <i class="bi bi-filetype-json"></i>
                         {% translate 'Raw data' %}
                       </strong>
@@ -393,7 +395,7 @@
                         {{ put_form }}
                         <div class="form-actions">
                           <button class="btn btn-lg btn-primary w-100" title="Make a PUT request on the {{ name }} resource">
-                            <strong class="d-flex align-items-center gap-3">
+                            <strong class="d-flex align-items-center justify-content-center gap-3">
                               <i class="bi bi-send-fill"></i>
                               {% translate "PUT" %}
                             </strong>
@@ -413,7 +415,7 @@
                           {% if raw_data_put_form %}
                             <button class="btn btn-lg btn-primary w-100"
                               title="Make a PUT request on the {{ name }} resource">
-                              <strong class="d-flex align-items-center gap-3">
+                              <strong class="d-flex align-items-center justify-content-center gap-3">
                                 <i class="bi bi-send-fill"></i>
                                 {% translate "PUT" %}
                               </strong>
@@ -422,7 +424,7 @@
                           {% if raw_data_patch_form %}
                             <button data-method="PATCH" class="btn btn-lg btn-primary"
                               title="Make a PATCH request on the {{ name }} resource">
-                              <strong class="d-flex align-items-center gap-3">
+                              <strong class="d-flex align-items-center justify-content-center gap-3">
                                 <i class="bi bi-send-fill"></i>
                                 {% translate "PATCH" %}
                               </strong>
