@@ -3,7 +3,7 @@
 {{ form.non_field_errors }}
 
 {% for field in form %}
-  <div class="form-floating">
+  <div class="form-floating mb-4">
     {{ field|add_class:"form-control" }}
     {{ field.label_tag|add_class:"form-label" }}
     <span class="d-block text-muted">{{ field.help_text|safe }}</span>

@@ -3,8 +3,7 @@
 {% load i18n static rest_framework %}
 
 {% block meta %}
-  <meta name="robots" content="NONE,NOARCHIVE" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  {{ block.super }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% endblock %}
 
@@ -137,17 +136,17 @@
           <form id="get-form">
             <fieldset>
               {% if api_settings.URL_FORMAT_OVERRIDE %}
-                <div class="btn-group" role="group">
-                  <a class="btn btn-lg btn-primary" href="{{ request.get_full_path }}" rel="nofollow"
+                <div class="btn-group w-100" role="group">
+                  <a class="btn btn-lg btn-primary w-100" href="{{ request.get_full_path }}" rel="nofollow"
                     title="Make a GET request on the {{ name }} resource">
                     <strong>
                       {% translate "GET" %}
                     </strong>
                   </a>
-                  <button class="btn btn-lg btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButtonSM"
+                  <button class="btn btn-lg btn-outline-primary w-25 dropdown-toggle" type="button" id="dropdownMenuButtonSM"
                     data-bs-toggle="dropdown" aria-expanded="false"></button>
                   <div class="dropdown">
-                    <ul class="dropdown-menu rounded-3 shadow" aria-labelledby="dropdownMenuButtonSM">
+                    <ul class="dropdown-menu dropdown-menu-end rounded-3 shadow" aria-labelledby="dropdownMenuButtonSM">
                       <li>
                         <h6 class="dropdown-header">
                           {% translate 'Select a format' %}
@@ -267,11 +266,7 @@
           </div>
 
           <div class="response-info" aria-label="{% translate 'response info' %}">
-            <pre class="prettyprint">
-<div class="language-http bg-white"><strong>HTTP {{ response.status_code }} {{ response.status_text }}</strong>
-{% for key, val in response_headers|items %}<strong>{{ key }}:</strong> <span class="lit">{{ val|break_long_headers|urlize }}</span>
-{% endfor %}</div>
-<code class="language-json bg-light rounded-4">{{ content|urlize }}</code></pre>
+            <pre class="prettyprint"><div class="language-http bg-white"><strong>HTTP {{ response.status_code }} {{ response.status_text }}</strong><br>{% for key, val in response_headers|items %}<br><strong>{{ key }}:</strong> <span class="lit">{{ val|break_long_headers|urlize }}</span>{% endfor %}</div><code class="language-json bg-light rounded-4">{{ content|urlize }}</code></pre>
           </div>
         </div>
       </section>
@@ -330,7 +325,7 @@
                       <fieldset>
                         {% include "rest_framework/raw_data_form.html" %}
                         <div class="form-actions">
-                          <button class="btn btn-lg btn-primary" title="Make a POST request on the {{ name }} resource">
+                          <button class="btn btn-lg btn-primary w-100" title="Make a POST request on the {{ name }} resource">
                             <strong>
                               {% translate "POST" %}
                             </strong>
@@ -394,7 +389,7 @@
                         {% include "rest_framework/raw_data_form.html" %}
                         <div class="form-actions">
                           {% if raw_data_put_form %}
-                          <button class="btn btn-lg btn-primary"
+                          <button class="btn btn-lg btn-primary w-100"
                             title="Make a PUT request on the {{ name }} resource">
                             <strong>
                               {% translate "PUT" %}
