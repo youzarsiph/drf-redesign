@@ -248,8 +248,8 @@
                   <p class="mb-4">
                     {% translate "Are you sure you want to delete this" %} {{ name }}?
                   </p>
-                  <div class="d-grid gap-4">
-                    <form class="button-form" action="{{ request.get_full_path }}" data-method="DELETE">
+                  <div class="d-grid d-lg-flex align-items-lg-center gap-4">
+                    <form class="button-form w-100" action="{{ request.get_full_path }}" data-method="DELETE">
                       <button class="btn btn-lg btn-danger w-100">
                         <strong class="d-flex align-item-center justify-content-center gap-3">
                           <i class="bi bi-trash"></i>
@@ -257,9 +257,9 @@
                         </strong>
                       </button>
                     </form>
-                    <button type="button" class="btn btn-lg btn-outline-secondary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-lg btn-outline-secondary w-100" data-bs-dismiss="modal">
                       <strong class="d-flex align-item-center justify-content-center gap-3">
-                        <i class="bi bi-close"></i>
+                        <i class="bi bi-x-lg"></i>
                         {% translate "Cancel" %}
                       </strong>
                     </button>
