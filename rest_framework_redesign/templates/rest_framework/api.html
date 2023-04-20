@@ -15,7 +15,15 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
   {% endblock %}
 
-  {% if code_style %}<style>{{ code_style }}</style>{% endif %}
+  <style>
+    {% if code_style %}
+      {{ code_style }}
+    {% endif %}
+
+    .dropdown-toggle::after {
+      content: none;
+    }
+  </style>
 {% endblock %}
 
 
@@ -82,6 +90,7 @@
                     {% else %}
                       {% translate "Account" %}
                     {% endif %}
+                    <i class="bi bi-chevron-down"></i>
                   </strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end rounded-3 shadow">
@@ -169,7 +178,9 @@
                     </strong>
                   </a>
                   <button class="btn btn-lg btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-chevron-down"></i>
+                  </button>
                   <div class="dropdown">
                     <ul class="dropdown-menu dropdown-menu-end rounded-3 shadow" aria-labelledby="dropdownMenuButton">
                       <li>
@@ -260,12 +271,12 @@
         {% endif %}
 
         {% if extra_actions %}
-          <div class="dropdown" style="float: right; margin-right: 10px">
+          <div class="dropdown">
             <button class="btn btn-lg btn-info w-100" id="extra-actions-menu" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
               <strong class="d-flex align-items-center justify-content-center gap-3">
-                <i class="bi bi-three-dots"></i>
                 {% translate "Extra Actions" %}
+                <i class="bi bi-chevron-down"></i>
               </strong>
             </button>
             <ul class="dropdown-menu" aria-labelledby="extra-actions-menu">
