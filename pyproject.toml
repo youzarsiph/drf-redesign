@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rest-framework-redesign"
-version = "0.1.6"
+version = "0.1.98"
 description = "Redesign of the browsable api of Django REST Framework"
 authors = ["Yousef Abu Shanab <josephyousef249@gmail.com>"]
 license = "MIT"
@@ -11,6 +11,8 @@ repository = "https://github.com/youzarsiph/rest-framework-redesign/"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+django = "^4.2"
+djangorestframework = "^3.14"
 
 
 [build-system]
