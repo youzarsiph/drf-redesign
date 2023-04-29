@@ -155,16 +155,14 @@
           {{ description }}
         {% endblock %}
       </div>
-
-      {% if paginator %}
-        <nav style="float: right">
-          {% get_pagination_html paginator %}
-        </nav>
-      {% endif %}
     </section>
 
     {% block request_forms %}
       <section class="d-grid d-md-flex align-items-lg-center justify-content-lg-end gap-4 mb-4" aria-label="{% translate 'Request form' %}">
+        {% if paginator %}
+          {% get_pagination_html paginator %}
+        {% endif %}
+
         {% if 'GET' in allowed_methods %}
           <form id="get-form">
             <fieldset>
