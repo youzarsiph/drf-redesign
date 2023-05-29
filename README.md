@@ -1,10 +1,10 @@
 # rest-framework-redesign
 
-Redesign of the browsable api of Django REST Framework
+Redesign of the browsable API of Django REST Framework using Bootstrap 5.
+
+The project aims to improve the look and feel of the API.
 
 ## Get started
-
-To get started with rest-framework-redesign:
 
 Install the package:
 
@@ -46,4 +46,4 @@ Run the server
 python manage.py runserver
 ```
 
-I hope you that you find this useful.
+I hope you find this useful.
