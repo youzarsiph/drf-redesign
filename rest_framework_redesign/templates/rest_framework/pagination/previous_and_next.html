@@ -1,27 +1,35 @@
+{% load i18n %}
+
 <nav aria-label="Pagination" class="d-flex align-items-center">
-  <ol class="pagination flex-wrap gap-3 mb-0">
+  <ol class="pagination flex-wrap gap-4 mb-0">
     {% if previous_url %}
       <li class="page-item">
-        <a href="{{ previous_url }}" class="page-link">
-          &laquo; Previous
+        <a class="page-link rounded-4 shadow-sm d-flex align-item-center gap-4" href="{{ previous_url }}" aria-label="Previous">
+          <i class="bi bi-chevron-left"></i>
+          {% translate 'Prev' %}
         </a>
       </li>
     {% else %}
       <li class="page-item disabled">
-        <a href="#" class="page-link">
-          &laquo; Previous
+        <a class="page-link rounded-4 shadow-sm d-flex align-item-center gap-4" href="#" aria-label="Previous">
+          <i class="bi bi-chevron-left"></i>
+          {% translate 'Prev' %}
         </a>
       </li>
     {% endif %}
 
     {% if next_url %}
       <li class="page-item">
-        <a class="page-link" href="{{ next_url }}">Next &raquo;</a>
+        <a class="page-link rounded-4 shadow-sm d-flex align-item-center gap-4" href="{{ next_url }}" aria-label="Next">
+          {% translate 'Next' %}
+          <i class="bi bi-chevron-right"></i>
+        </a>
       </li>
     {% else %}
       <li class="page-item disabled">
-        <a class="page-link" href="#">
-          Next &raquo;
+        <a class="page-link rounded-4 shadow-sm d-flex align-item-center gap-4" href="#" aria-label="Next">
+          {% translate 'Next' %}
+          <i class="bi bi-chevron-right"></i>
         </a>
       </li>
     {% endif %}

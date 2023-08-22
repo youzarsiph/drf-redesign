@@ -4,7 +4,7 @@
 <ul class="card card-body rounded-3 list-group">
   {% for key, label in options %}
     <li class="list-group-item border-0 px-4">
-      <a href="{% add_query_param request param key %}" class="d-flex align-items-center text-decoration-none gap-3">
+      <a href="{% add_query_param request param key %}" class="d-flex align-items-center text-decoration-none gap-4">
         <div class="form-check">
           {% if key == current %}
             <input type="radio" id="{{ key }}" checked class="form-check-input" name="order">
