@@ -1,9 +1,9 @@
 {% load i18n rest_framework %}
 
 <h5>{% translate "Ordering" %}</h5>
-<ul class="card card-body rounded-3 list-group">
+<ul class="d-grid gap-4">
   {% for key, label in options %}
-    <li class="list-group-item border-0 px-4">
+    <li>
       <a href="{% add_query_param request param key %}" class="d-flex align-items-center text-decoration-none gap-4">
         <div class="form-check">
           {% if key == current %}

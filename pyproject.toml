@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rest-framework-redesign"
-version = "0.2.1"
+version = "0.2.2"
 description = "Redesign of the browsable api of Django REST Framework"
 authors = ["Yousef Abu Shanab <josephyousef249@gmail.com>"]
 license = "MIT"

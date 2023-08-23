@@ -2,7 +2,7 @@
 
 Redesign of the browsable API of Django REST Framework using Bootstrap 5.
 
-The project aims to improve the look and feel of the API.
+The project aims to improve the look and feel of the API. Starting from version 0.2.2, the project supports dark mode.
 
 ## Get started
 
@@ -38,12 +38,6 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls')),
     ...
 ]
-```
-
-Run the server
-
-```bash
-python manage.py runserver
 ```
 
 I hope you find this useful.
