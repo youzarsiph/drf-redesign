@@ -80,15 +80,24 @@
 
 {% block navbar %}
   <header class="fixed-top p-1 p-md-2">
-    <div class="bg-danger px-2 px-md-3 shadow rounded-4">
+    <div class="bg-danger px-2 px-md-3 shadow-sm rounded-4 border border-danger">
       <div class="bg-dark px-2 px-md-3 rounded-4 shadow-sm">
         <div class="bg-danger px-2 px-md-3 rounded-4 shadow-sm">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-4 shadow-sm {% block bootstrap_navbar_variant %}{% endblock %}"
             role="navigation" aria-label="{% translate 'navbar' %}">
             <div class="container-fluid">
               {% block branding %}
-                <a class="navbar-brand" rel="nofollow" href="https://www.django-rest-framework.org/">
-                  <strong>{% translate 'Django REST Framework' %}</strong>
+                <a class="navbar-brand d-flex align-item-center justify-content-center gap-1 bg-white rounded-4 px-2 shadow-sm" rel="nofollow"
+                  href="https://www.django-rest-framework.org/">
+                  <span class="fw-bold text-danger">[</span>
+                  <span class="fw-bold text-dark">{</span>
+                  <strong class="text-dark d-flex align-item-center justify-content-center">
+                    <abbr title="Django Rest Framework" class="text-decoration-none">
+                      {% translate 'DRF' %}
+                    </abbr>
+                  </strong>
+                  <span class="fw-bold text-dark">}</span>
+                  <span class="fw-bold text-danger">]</span>
                 </a>
               {% endblock %}
     
