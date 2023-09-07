@@ -1,6 +1,6 @@
 <div class="{% if style.input_type != "file" %}form-floating {% endif %}mb-4">
   {% if field.label and style.input_type == "file" %}
-    <label class="form-label {% if style.hide_label %}sr-only{% endif %}">
+    <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
     </label>
   {% endif %}
@@ -15,7 +15,7 @@
   />
 
   {% if field.label and style.input_type != "file" %}
-    <label class="form-label {% if style.hide_label %}sr-only{% endif %}">
+    <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
     </label>
   {% endif %}

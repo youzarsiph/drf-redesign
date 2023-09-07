@@ -1,0 +1,40 @@
+{% load rest_framework %}
+
+<div class="d-grid gap-1 mb-4">
+  <div class="input-group">
+    {% if field.label %}
+      <label for="{{ field.name }}" class="input-group-text{% if style.hide_label %} sr-only{% endif %}">
+        {{ field.label }}
+      </label>
+    {% endif %}
+  
+    <select class="form-select" name="{{ field.name }}" id="{{ field.name }}">
+      {% if field.allow_null or field.allow_blank %}
+        <option value="" {% if not field.value %}selected{% endif %}>--------</option>
+      {% endif %}
+      {% for select in field.iter_options %}
+        {% if select.start_option_group %}
+          <optgroup label="{{ select.label }}">
+        {% elif select.end_option_group %}
+          </optgroup>
+        {% else %}
+          <option value="{{ select.value }}" {% if select.value|as_string == field.value|as_string %}selected{% endif %}
+           {% if select.disabled %}disabled{% endif %}>{{ select.display_text }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+  {% if field.help_text %}
+    <small class="d-block text-muted">{{ field.help_text|safe }}</small>
+  {% endif %}
+
+  {% if field.errors %}
+    <div class="mt-3"></div>
+    {% for error in field.errors %}
+      <div role="alert" class="alert alert-danger mb-3">
+        <p class="mb-0">{{ error }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>

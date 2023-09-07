@@ -5,16 +5,14 @@
         {{ field.label }}
       </label>
     {% endif %}
-
-    <textarea
-      id="{{ field.name }}"
-      name="{{ field.name }}"
+  
+    <textarea id="{{ field.name }}" name="{{ field.name }}"
       class="form-control {% if field.errors %}is-invalid{% endif %}"
-      {% if style.rows %}rows="{{ style.rows }}" {% endif %}
-      {% if style.placeholder %}placeholder="{{ style.placeholder }}"
-      {% endif %}>{% if field.value %}{{ field.value }}{% endif %}</textarea>
+      {% if style.rows %}rows="{{ style.rows }}"{% endif %}
+      {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
+    >{% if field.value %}{{ field.value }}{% endif %}</textarea>
   </div>
-
+  
   {% if field.help_text %}
     <small class="d-block text-muted">{{ field.help_text|safe }}</small>
   {% endif %}

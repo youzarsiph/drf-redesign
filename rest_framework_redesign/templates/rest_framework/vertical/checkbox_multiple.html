@@ -2,9 +2,9 @@
 
 <div class="mb-4">
   {% if field.label %}
-  <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
-    {{ field.label }}
-  </label>
+    <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
+      {{ field.label }}
+    </label>
   {% endif %}
 
   <div>
@@ -12,28 +12,28 @@
       {% for key, text in field.choices|items %}
         <div class="form-check">
           <input
+            id="{{ key }}"
+            value="{{ key }}"
             type="checkbox"
             name="{{ field.name }}"
-            value="{{ key }}"
-            id="{{ key }}"
             class="form-check-input"
             {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}
           />
-          <label class="form-check-label" for="{{ key }}"> {{ text }} </label>
+          <label class="form-check-label" for="{{ key }}">{{ text }}</label>
         </div>
       {% endfor %}
     {% else %}
       {% for key, text in field.choices|items %}
         <div class="form-check">
           <input
+            id="{{ key }}"
+            value="{{ key }}"
             type="checkbox"
             name="{{ field.name }}"
-            value="{{ key }}"
-            id="{{ key }}"
             class="form-check-input"
             {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}
           />
-          <label class="form-check-label" for="{{ key }}"> {{ text }} </label>
+          <label class="form-check-label" for="{{ key }}">{{ text }}</label>
         </div>
       {% endfor %}
     {% endif %}

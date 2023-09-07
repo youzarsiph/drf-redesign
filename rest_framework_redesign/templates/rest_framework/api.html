@@ -394,7 +394,7 @@
     {% endif %}
 
     <div class="row g-4 mb-4" aria-label="{% translate 'Main content' %}">
-      <section class="col-12 col-lg-8" role="main" aria-label="{% translate 'Main content' %}">
+      <section class="col-12 col-lg-8 order-last order-lg-first" role="main" aria-label="{% translate 'Main content' %}">
         <div class="card card-body rounded-4 p-4 shadow-sm">
           <div class="request-info" aria-label="{% translate 'Request info' %}">
             <pre class="prettyprint"><b>{{ request.method }}</b> {{ request.get_full_path }}</pre>

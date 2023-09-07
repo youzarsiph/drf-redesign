@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load rest_framework %}
+
+{% translate "No items to select." as no_items %}
+
+<div class="d-grid gap-1 mb-4">
+  <div>
+    {% if field.label %}
+      <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
+        {{ field.label }}
+      </label>
+    {% endif %}
+  
+    <select multiple {{ field.choices|yesno:",disabled" }} class="form-select" name="{{ field.name }}">
+      {% for select in field.iter_options %}
+        {% if select.start_option_group %}
+          <optgroup label="{{ select.label }}">
+        {% elif select.end_option_group %}
+          </optgroup>
+        {% else %}
+          <option value="{{ select.value }}"
+          {% if select.value|as_string in field.value|as_list_of_strings %}selected{% endif %}
+          {% if select.disabled %}disabled{% endif %}>{{ select.display_text }}</option>
+        {% endif %}
+      {% empty %}
+          <option>{{ no_items }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  {% if field.help_text %}
+    <small class="d-block text-muted">{{ field.help_text|safe }}</small>
+  {% endif %}
+
+  {% if field.errors %}
+    <div class="mt-3"></div>
+    {% for error in field.errors %}
+      <div role="alert" class="alert alert-danger mb-3">
+        <p class="mb-0">{{ error }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>

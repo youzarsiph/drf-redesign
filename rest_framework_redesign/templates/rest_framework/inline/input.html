@@ -1,20 +1,20 @@
 <div class="d-grid gap-1 mb-4">
-  <div>
-    {% if field.label %}
-      <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
-        {{ field.label }}
-      </label>
-    {% endif %}
-
-    <textarea
+  <div class="input-group">
+    <label for="{{ field.name }}" class="input-group-text{% if style.hide_label %} sr-only{% endif %}">
+      {{ field.label }}
+    </label>
+  
+    <input
       id="{{ field.name }}"
       name="{{ field.name }}"
       class="form-control {% if field.errors %}is-invalid{% endif %}"
-      {% if style.rows %}rows="{{ style.rows }}" {% endif %}
-      {% if style.placeholder %}placeholder="{{ style.placeholder }}"
-      {% endif %}>{% if field.value %}{{ field.value }}{% endif %}</textarea>
+      type="{{ style.input_type }}"
+      {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
+      {% if field.value is not None %}value="{{ field.value }}"{% endif %}
+      {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
+    />
   </div>
-
+  
   {% if field.help_text %}
     <small class="d-block text-muted">{{ field.help_text|safe }}</small>
   {% endif %}
