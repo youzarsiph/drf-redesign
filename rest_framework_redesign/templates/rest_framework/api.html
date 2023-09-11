@@ -277,8 +277,8 @@
                       <li>
                         <a class="dropdown-item" data-bs-toggle="tooltip"
                           href="{% add_query_param request api_settings.URL_FORMAT_OVERRIDE format %}" rel="nofollow"
-                          title="Make a GET request on the {{ name }} resource with the format set to `{{ format }}`">
-                          {{ format }}
+                          title="Make a GET request on the {{ name }} resource with the format set to `{{ format|upper }}`">
+                          {{ format|upper }}
                         </a>
                       </li>
                       {% endfor %}
