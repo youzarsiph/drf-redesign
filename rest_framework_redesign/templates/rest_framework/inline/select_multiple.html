@@ -21,7 +21,7 @@
   </select>
 
   {% if field.label %}
-    <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
+    <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
     </label>
   {% endif %}

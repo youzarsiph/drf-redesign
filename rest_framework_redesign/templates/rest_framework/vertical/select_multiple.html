@@ -6,7 +6,7 @@
 <div class="d-grid gap-1 mb-4">
   <div>
     {% if field.label %}
-      <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
+      <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
         {{ field.label }}
       </label>
     {% endif %}

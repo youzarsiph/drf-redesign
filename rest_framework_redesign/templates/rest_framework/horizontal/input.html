@@ -1,11 +1,12 @@
-<div class="{% if style.input_type != "file" %}form-floating {% endif %}mb-4">
-  {% if field.label and style.input_type == "file" %}
-    <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
+<div class="{% if style.input_type != 'file' %}form-floating {% endif %}mb-4">
+  {% if field.label and style.input_type == 'file' %}
+    <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
     </label>
   {% endif %}
 
   <input
+    id="{{ field.name }}"
     name="{{ field.name }}"
     class="form-control {% if field.errors %}is-invalid{% endif %}"
     type="{{ style.input_type }}"
@@ -14,8 +15,8 @@
     {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
   />
 
-  {% if field.label and style.input_type != "file" %}
-    <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
+  {% if field.label and style.input_type != 'file' %}
+    <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
     </label>
   {% endif %}
