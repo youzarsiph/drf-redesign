@@ -267,7 +267,7 @@
                     <i class="bi bi-chevron-down"></i>
                   </button>
                   <div class="dropdown">
-                    <ul class="dropdown-menu dropdown-menu-end rounded-4 shadow-sm pb-3" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu dropdown-menu-end rounded-4 shadow-sm pb-3 w-100" aria-labelledby="dropdownMenuButton">
                       <li>
                         <h6 class="dropdown-header">
                           {% translate 'Select a format' %}
@@ -364,7 +364,12 @@
                 <i class="bi bi-chevron-down"></i>
               </span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="extra-actions-menu">
+            <ul class="dropdown-menu rounded-4 shadow-sm pb-3 w-100" aria-labelledby="extra-actions-menu">
+              <li>
+                <h3 class="dropdown-header">
+                  {% translate 'Select an action' %}
+                </h3>
+              </li>
               {% for action_name, url in extra_actions|items %}
                 <li>
                   <a class="dropdown-item" href="{{ url }}">
