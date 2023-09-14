@@ -1,19 +1,15 @@
-<div class="d-grid gap-1 mb-4">
-  <div>
-    {% if field.label %}
-      <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
-        {{ field.label }}
-      </label>
-    {% endif %}
+<div class="form-floating mb-4">
+  <textarea
+    id="{{ field.name }}"
+    name="{{ field.name }}"
+    class="form-control {% if field.errors %}is-invalid{% endif %}"
+    {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
+    {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
+  >{% if field.value is not None %}{{ field.value }}{% endif %}</textarea>
 
-    <textarea
-      id="{{ field.name }}"
-      name="{{ field.name }}"
-      class="form-control {% if field.errors %}is-invalid{% endif %}"
-      {% if style.rows %}rows="{{ style.rows }}" {% endif %}
-      {% if style.placeholder %}placeholder="{{ style.placeholder }}"
-      {% endif %}>{% if field.value %}{{ field.value }}{% endif %}</textarea>
-  </div>
+  <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
+    {{ field.label }}
+  </label>
 
   {% if field.help_text %}
     <small class="d-block text-muted">{{ field.help_text|safe }}</small>
