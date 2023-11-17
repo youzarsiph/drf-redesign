@@ -3,6 +3,7 @@
     <input
       value="true"
       type="checkbox"
+      {% if field.required %}required{% endif %}
       id="{{ field.name }}"
       name="{{ field.name }}"
       {% if field.value %}checked{% endif %}
@@ -15,6 +16,7 @@
         class="form-check-label{% if style.hide_label %} sr-only{% endif %}"
       >
         {{ field.label }}
+        {% if field.required %}<span class="text-danger">*</span>{% endif %}
       </label>
     {% endif %}
 

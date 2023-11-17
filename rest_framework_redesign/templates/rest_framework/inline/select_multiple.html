@@ -4,7 +4,8 @@
 {% translate "No items to select." as no_items %}
 
 <div class="form-floating mb-4">
-  <select multiple {{ field.choices|yesno:",disabled" }} class="form-select" name="{{ field.name }}">
+  <select multiple {{ field.choices|yesno:",disabled" }} class="form-select" name="{{ field.name }}"
+    {% if field.required %}required{% endif %}>
     {% for select in field.iter_options %}
       {% if select.start_option_group %}
         <optgroup label="{{ select.label }}">
@@ -23,6 +24,7 @@
   {% if field.label %}
     <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
+      {% if field.required %}<span class="text-danger">*</span>{% endif %}
     </label>
   {% endif %}
 

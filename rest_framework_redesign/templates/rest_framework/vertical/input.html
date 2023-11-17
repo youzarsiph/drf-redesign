@@ -2,22 +2,29 @@
   <div>
     <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
       {{ field.label }}
+      {% if field.required %}<span class="text-danger">*</span>{% endif %}
     </label>
   
     <input
       id="{{ field.name }}"
       name="{{ field.name }}"
-      class="form-control {% if field.errors %}is-invalid{% endif %}"
       type="{{ style.input_type }}"
+      {% if field.required %}required{% endif %}
+      class="form-control {% if field.errors %}is-invalid{% endif %}"
       {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
       {% if field.value is not None %}value="{{ field.value }}"{% endif %}
       {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
     />
   </div>
-  
-  {% if field.help_text %}
-    <small class="d-block text-muted">{{ field.help_text|safe }}</small>
-  {% endif %}
+
+  <div class="d-flex align-items-center gap-3">
+    {% if field.help_text %}
+      <small class="d-block text-muted">{{ field.help_text|safe }}</small>
+    {% endif %}
+    {% if field.max_length %}
+      <small class="d-block text-muted">Max {{ field.max_length }} characters</small>
+    {% endif %}
+  </div>
 
   {% if field.errors %}
     <div class="mt-3"></div>

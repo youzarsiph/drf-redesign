@@ -4,6 +4,7 @@
   {% if field.label %}
   <label class="form-label{% if style.hide_label %} sr-only{% endif %}">
     {{ field.label }}
+    {% if field.required %}<span class="text-danger">*</span>{% endif %}
   </label>
   {% endif %}
 
@@ -13,6 +14,7 @@
         <div class="form-check">
           <input
             type="checkbox"
+            {% if field.required %}required{% endif %}
             name="{{ field.name }}"
             value="{{ key }}"
             id="{{ key }}"
@@ -27,6 +29,7 @@
         <div class="form-check">
           <input
             type="checkbox"
+            {% if field.required %}required{% endif %}
             name="{{ field.name }}"
             value="{{ key }}"
             id="{{ key }}"

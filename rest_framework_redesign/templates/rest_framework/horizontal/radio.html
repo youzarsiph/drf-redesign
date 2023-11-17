@@ -6,6 +6,7 @@
   <div class="form-check">
     <input
       type="radio"
+      {% if field.required %}required{% endif %}
       name="{{ field.name }}"
       class="form-check-input"
       id="{{ field.name }}"
@@ -21,14 +22,15 @@
         {% else %}
           {{ field.label }}
         {% endif %}
+        {% if field.required %}<span class="text-danger">*</span>{% endif %}
       </label>
     {% endif %}
   </div>
 
   {% for key, text in field.choices|items %}
     <div class="form-check">
-      <input type="radio" name="{{ field.name }}" class="form-check-input"
-      id="{{ field.name }}" value="{{ key }}" {% if key|as_string == field.value|as_string %}checked{% endif %} />
+      <input type="radio" name="{{ field.name }}" class="form-check-input" id="{{ field.name }}"
+        value="{{ key }}" {% if key|as_string == field.value|as_string %}checked{% endif %} />
 
       {% if field.label %}
         <label
@@ -41,16 +43,16 @@
     </div>
   {% endfor %}
 
-    {% if field.help_text %}
-      <small class="d-block text-muted">{{ field.help_text|safe }}</small>
-    {% endif %}
+  {% if field.help_text %}
+    <small class="d-block text-muted">{{ field.help_text|safe }}</small>
+  {% endif %}
 
-    {% if field.errors %}
-      <div class="mt-3"></div>
-      {% for error in field.errors %}
-        <div role="alert" class="alert alert-danger mb-3">
-          <p class="mb-0">{{ error }}</p>
-        </div>
-      {% endfor %}
-    {% endif %}
+  {% if field.errors %}
+    <div class="mt-3"></div>
+    {% for error in field.errors %}
+      <div role="alert" class="alert alert-danger mb-3">
+        <p class="mb-0">{{ error }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
 </div>

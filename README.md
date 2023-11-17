@@ -35,19 +35,4 @@ INSTALLED_APPS = [
 ]
 ```
 
-Include `rest_framework.urls` in your project URLConf
-
-```python
-# urls.py
-
-...
-from django.urls import path, include
-
-urlpatterns = [
-    ...
-    path('auth/', include('rest_framework.urls')),
-    ...
-]
-```
-
 I hope you find this useful.

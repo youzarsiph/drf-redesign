@@ -2,6 +2,7 @@
   <textarea
     id="{{ field.name }}"
     name="{{ field.name }}"
+    {% if field.required %}required{% endif %}
     class="form-control {% if field.errors %}is-invalid{% endif %}"
     {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
     {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
@@ -9,6 +10,7 @@
 
   <label for="{{ field.name }}" class="form-label{% if style.hide_label %} sr-only{% endif %}">
     {{ field.label }}
+    {% if field.required %}<span class="text-danger">*</span>{% endif %}
   </label>
 
   {% if field.help_text %}
