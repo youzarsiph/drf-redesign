@@ -10,9 +10,9 @@ homepage = "https://github.com/youzarsiph/rest-framework-redesign/"
 repository = "https://github.com/youzarsiph/rest-framework-redesign/"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-django = "^3.0"
-djangorestframework = "^3.14"
+python = ">=3.7"
+django = ">=3.0"
+djangorestframework = ">=3.14"
 
 
 [build-system]
