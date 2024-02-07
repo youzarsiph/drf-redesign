@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "rest-framework-redesign"
-version = "0.2.9"
+name = "drf-redesign"
+version = "0.3.0"
 description = "Redesign of the browse-able api of Django REST Framework with Bootstrap 5"
 authors = ["Yousef Abu Shanab <josephyousef249@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "rest_framework_redesign"}]
-homepage = "https://github.com/youzarsiph/rest-framework-redesign/"
-repository = "https://github.com/youzarsiph/rest-framework-redesign/"
+packages = [{include = "drf_redesign"}]
+homepage = "https://github.com/youzarsiph/drf-redesign/"
+repository = "https://github.com/youzarsiph/drf-redesign/"
 
 [tool.poetry.dependencies]
 python = ">=3.7"

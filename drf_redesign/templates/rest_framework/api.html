@@ -436,8 +436,7 @@
                 {% if post_form %}
                   <div class="tab-pane active" id="form" role="tabpanel" aria-labelledby="form-tab" tabindex="0">
                     {% with form=post_form %}
-                      <form action="{{ request.get_full_path }}" method="POST" enctype="multipart/form-data"
-                        class="form-horizontal" novalidate>
+                      <form action="{{ request.get_full_path }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         <fieldset>
                           {% csrf_token %}
                           {{ post_form }}
@@ -508,8 +507,7 @@
               <div class="tab-content">
                 {% if put_form %}
                   <div class="tab-pane active" id="put-object-form">
-                    <form action="{{ request.get_full_path }}" data-method="PUT" enctype="multipart/form-data"
-                      class="form-horizontal" novalidate>
+                    <form action="{{ request.get_full_path }}" data-method="PUT" enctype="multipart/form-data" class="form-horizontal">
                       <fieldset>
                         {{ put_form }}
                         <div class="form-actions">
