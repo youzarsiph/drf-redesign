@@ -1,1 +1,1 @@
-""" Template Tags and Filters for DRFR """
+""" Template Tags and Filters for DRF Redesign """

@@ -1,11 +1,10 @@
-""" AppConf for DRFR """
-
+""" AppConf for DRF Redesign """
 
 from django.apps import AppConfig
 
 
-class RestFrameworkRedesignConfig(AppConfig):
+class DRFRedesignConfig(AppConfig):
     """App configuration for the app"""
 
-    name = "rest_framework_redesign"
+    name = "drf_redesign"
     default_auto_field = "django.db.models.BigAutoField"

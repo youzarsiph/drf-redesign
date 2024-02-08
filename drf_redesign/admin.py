@@ -1,6 +1,5 @@
 """ Admin site model registration """
 
-
 from django.contrib import admin
 
 
