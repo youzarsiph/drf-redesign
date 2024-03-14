@@ -32,23 +32,23 @@ We're sure you'll enjoy it as much as we do!
 
 ## Images
 
-![DRF Redesign Dark Mode](img/drf-redesign-dark.jpeg)
+![DRF Redesign Dark Mode](assets/img/drf-redesign-dark.jpeg)
 DRF Redesign Dark Mode
 
-![DRF Redesign Light Mode](img/drf-redesign-light.jpeg)
+![DRF Redesign Light Mode](assets/img/drf-redesign-light.jpeg)
 DRF Redesign Light Mode
 
 ## 🛠️ Get started
 
 To use drf-redesign, follow these simple steps:
 
-- Install the package:
+Install the package:
 
 ```console
 pip install drf-redesign
 ```
 
-- Add `drf_redesign` to `INSTALLED_APPS` setting, before `rest_framework`
+Add `drf_redesign` to `INSTALLED_APPS` setting, before `rest_framework`
 
 ```python
 # settings.py
