@@ -1,5 +1,9 @@
 # 🚀 drf-redesign
 
+[![Pylint](https://github.com/youzarsiph/drf-redesign/actions/workflows/pylint.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/pylint.yml)
+[![Upload Python Package](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml)
+[![Django CI](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml)
+
 **drf-redesign** is a project that gives a fresh look to the browse-able API of Django REST Framework using Bootstrap 5.
 
 We want to make the API more **appealing** and **intuitive** for developers and users alike.

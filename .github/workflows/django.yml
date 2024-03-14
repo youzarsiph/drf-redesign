@@ -25,6 +25,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install django djangorestframework
+    - name: Create Django Project
+      run: |
+        django-admin startproject myproject
+    - name: Copy Repository to Project
+      run: |
+        cp -r * myproject/
+    - name: Add to INSTALLED_APPS
+      run: |
+        echo "INSTALLED_APPS += ['drf_redesign', 'rest_framework']" >> myproject/settings.py
     - name: Run Tests
       run: |
+        cd myproject
         python manage.py test
