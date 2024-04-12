@@ -1,7 +1,7 @@
 # 🚀 drf-redesign
 
-[![Pylint](https://github.com/youzarsiph/drf-redesign/actions/workflows/pylint.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/pylint.yml)
-[![Upload Python Package](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml)
+[![Ruff](https://github.com/youzarsiph/drf-redesign/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/ruff.yml)
+[![Publish](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml)
 [![Django CI](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml)
 
 **drf-redesign** is a project that gives a fresh look to the browse-able API of Django REST Framework using Bootstrap 5.
@@ -29,7 +29,7 @@ We're sure you'll enjoy it as much as we do!
   to add some visual flair to the API. The icons are scalable, customizable, and easy to use.
 - **Form input max length indicators**: drf-redesign shows the maximum length of each form input field,
   so you know how much data you can enter. The indicators also change color when you reach the limit, giving you visual feedback.
-- **Form inputs required indicators**: drf-redesign marks the required form input fields with an asterisk (*),
+- **Form inputs required indicators**: drf-redesign marks the required form input fields with an asterisk (\*),
   so you know which fields are mandatory to submit the form. The indicators also show an error message if you try to submit the form without filling the required fields.
 - **Browser form validation**: drf-redesign uses the built-in browser form validation features, such as HTML5 attributes,
   to validate the form input data before sending it to the server. The validation checks for formats, patterns, ranges, and more.
