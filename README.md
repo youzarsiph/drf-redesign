@@ -34,7 +34,7 @@ We're sure you'll enjoy it as much as we do!
 - **Browser form validation**: drf-redesign uses the built-in browser form validation features, such as HTML5 attributes,
   to validate the form input data before sending it to the server. The validation checks for formats, patterns, ranges, and more.
 
-## Images
+## Screenshots
 
 ![DRF Redesign Dark Mode](assets/img/drf-redesign-dark.jpeg)
 DRF Redesign Dark Mode
