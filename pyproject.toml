@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "drf-redesign"
-version = "0.3.4"
+version = "0.3.5"
 description = "Redesign of the browse-able api of Django REST Framework with Bootstrap 5"
 authors = ["Yousef Abu Shanab <josephyousef249@gmail.com>"]
 license = "MIT"
