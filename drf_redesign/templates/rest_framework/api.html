@@ -407,7 +407,7 @@
           </div>
 
           <div class="response-info" aria-label="{% translate 'response info' %}">
-<pre class="prettyprint d-grid gap-4">
+<pre class="prettyprint d-grid">
 <code class="language-http" style="padding: 0; background-color: transparent;">HTTP {{ response.status_code }} {{ response.status_text }}
 {% for key, val in response_headers|items %}{{ key }}: {{ val|break_long_headers|urlize }}
 {% endfor %}</code>

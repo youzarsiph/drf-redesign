@@ -26,4 +26,18 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll('#filtersModal form').forEach(e => e.classList.add("d-grid", 'gap-4'))
+    document.querySelectorAll('#filtersModal form p').forEach(e => e.classList.add("d-grid", 'm-0'))
+    document.querySelectorAll('#filtersModal form p label').forEach(e => e.classList.add("form-label"))
+    document.querySelectorAll('#filtersModal form p input').forEach(e => {
+      e.classList.add("form-control")
+      e.setAttribute('placeholder', e.getAttribute('name')[0].toUpperCase() + e.getAttribute('name').replace('_', ' ').slice(1))
+    })
+    document.querySelectorAll('#filtersModal form p select').forEach(e => {
+      e.classList.add("form-select")
+      e.setAttribute('placeholder', e.getAttribute('name')[0].toUpperCase() + e.getAttribute('name').replace('_', ' ').slice(1))
+    })
+  </script>
 </div>
