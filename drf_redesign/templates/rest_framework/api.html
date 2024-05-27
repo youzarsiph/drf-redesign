@@ -17,19 +17,9 @@
 {% endblock %}
 
 <style>
-  {
-    % if code_style %
-  }
-
-    {
-      {
-      code_style
-    }
-  }
-
-    {
-    % endif %
-  }
+  {% if code_style %}
+    {{code_style }}
+  {% endif %}
 
   .dropdown-toggle::after {
     content: none;
@@ -177,7 +167,7 @@
                     </li>
                     <li>
                       {% if user.is_authenticated %}
-                      {% optional_logout request user %}
+                      {% optional_logout request user csrf_token %}
                       {% else %}
                       {% optional_login request %}
                       {% endif %}
