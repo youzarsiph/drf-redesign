@@ -58,7 +58,7 @@ Add `drf_redesign` to `INSTALLED_APPS` setting, before `rest_framework`
 # settings.py
 
 INSTALLED_APPS = [
-    ...
+    ...,
     'drf_redesign',
     'rest_framework',
     ...

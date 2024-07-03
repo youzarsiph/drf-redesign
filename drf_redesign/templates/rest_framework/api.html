@@ -18,7 +18,7 @@
 
 <style>
   {% if code_style %}
-    {{code_style }}
+    {{ code_style }}
   {% endif %}
 
   .dropdown-toggle::after {
@@ -411,19 +411,23 @@
 
   <div class="row g-4 mb-4" aria-label="{% translate 'Main content' %}">
     <section class="col-12 col-lg-8 order-last order-lg-first" role="main" aria-label="{% translate 'Main content' %}">
-      <div class="card card-body rounded-4 p-4 shadow-sm">
-        <div class="request-info" aria-label="{% translate 'Request info' %}">
-          <pre
-            class="prettyprint"><code class="language-http" style="padding: 0; background-color: transparent;">{{ request.method }} {{ request.get_full_path }}</code></pre>
+      <div class="d-grid gap-4">
+        <div class="card card-body grid gap-4 rounded-4 p-4 shadow-sm">
+          <h3 class="card-title mb-0">Request</h3>
+          <div class="request-info" aria-label="{% translate 'Request info' %}">
+            <pre
+              class="prettyprint mb-0"><code class="language-http" style="padding: 0; background-color: transparent;">{{ request.method }} {{ request.get_full_path }}</code></pre>
+          </div>
         </div>
+          
 
-        <div class="response-info" aria-label="{% translate 'response info' %}">
-          <pre class="prettyprint d-grid">
-<code class="language-http" style="padding: 0; background-color: transparent;">HTTP {{ response.status_code }} {{ response.status_text }}
+        <div class="card card-body grid gap-4 rounded-4 p-4 shadow-sm">
+          <h3 class="card-title mb-0">Response</h3>
+          <div class="response-info" aria-label="{% translate 'response info' %}">
+            <pre class="prettyprint mb-0 d-grid"><code class="language-http" style="padding: 0; background-color: transparent;">HTTP {{ response.status_code }} {{ response.status_text }}
 {% for key, val in response_headers|items %}{{ key }}: {{ val|break_long_headers|urlize }}
-{% endfor %}</code>
-<code class="language-json" style="padding: 0; background-color: transparent;">{{ content|urlize }}</code>
-</pre>
+{% endfor %}</code><code class="language-json" style="padding: 0; background-color: transparent;">{{ content|urlize }}</code></pre>
+          </div>
         </div>
       </div>
     </section>
