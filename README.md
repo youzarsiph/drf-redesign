@@ -65,6 +65,10 @@ INSTALLED_APPS = [
 ]
 ```
 
+Optionally, overwrite the templates `drf_redesign/branding.html` and
+`drf_redesign/nav-items.html` in your application to replace the default
+branding and navbar menu items.
+
 That's it! You're ready to go. 😎
 
 I hope you find this useful. Let me know if you have any feedback or questions. 😊

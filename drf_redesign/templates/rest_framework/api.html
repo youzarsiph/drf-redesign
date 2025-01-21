@@ -96,18 +96,7 @@
           role="navigation" aria-label="{% translate 'navbar' %}">
           <div class="container-fluid">
             {% block branding %}
-            <a class="navbar-brand d-flex align-item-center justify-content-center gap-1 bg-white rounded-4 px-2 shadow-sm"
-              rel="nofollow" href="https://www.django-rest-framework.org/">
-              <span class="fw-bold text-danger">[</span>
-              <span class="fw-bold text-dark">{</span>
-              <strong class="text-dark d-flex align-item-center justify-content-center">
-                <abbr title="Django Rest Framework" data-bs-toggle="tooltip" class="text-decoration-none">
-                  {% translate 'DRF' %}
-                </abbr>
-              </strong>
-              <span class="fw-bold text-dark">}</span>
-              <span class="fw-bold text-danger">]</span>
-            </a>
+            {% include "drf_redesign/branding.html" %}
             {% endblock %}
 
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
@@ -117,33 +106,7 @@
 
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a href="https://www.django-rest-framework.org/" class="nav-link d-flex align-items-center gap-3">
-                    <i class="bi bi-house-fill"></i>
-                    {% translate "Home" %}
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.django-rest-framework.org/tutorial/quickstart/"
-                    class="nav-link d-flex align-items-center gap-3">
-                    <i class="bi bi-journal-code"></i>
-                    {% translate "Tutorial" %}
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://github.com/encode/django-rest-framework/"
-                    class="nav-link d-flex align-items-center gap-3">
-                    <i class="bi bi-github"></i>
-                    {% translate "Github" %}
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://github.com/youzarsiph/rest-framework-redesign/"
-                    class="nav-link d-flex align-items-center gap-3">
-                    <i class="bi bi-code-slash"></i>
-                    {% translate "Redesign" %}
-                  </a>
-                </li>
+                {% include "drf_redesign/nav-items.html" %}
               </ul>
               <ul class="navbar-nav gap-lg-4">
                 <li class="nav-item dropdown">
@@ -419,7 +382,7 @@
               class="prettyprint mb-0"><code class="language-http" style="padding: 0; background-color: transparent;">{{ request.method }} {{ request.get_full_path }}</code></pre>
           </div>
         </div>
-          
+
 
         <div class="card card-body grid gap-4 rounded-4 p-4 shadow-sm">
           <h3 class="card-title mb-0">Response</h3>

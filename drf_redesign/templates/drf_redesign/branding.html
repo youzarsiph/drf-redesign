@@ -1,0 +1,16 @@
+{% load i18n static rest_framework rest_framework_redesign %}
+
+{# Branding the left corner of the navigation bar.            #}
+{# Overwrite this template in your application to replace it. #}
+<a class="navbar-brand d-flex align-item-center justify-content-center gap-1 bg-white rounded-4 px-2 shadow-sm"
+  rel="nofollow" href="https://www.django-rest-framework.org/">
+  <span class="fw-bold text-danger">[</span>
+  <span class="fw-bold text-dark">{</span>
+  <strong class="text-dark d-flex align-item-center justify-content-center">
+    <abbr title="Django Rest Framework" data-bs-toggle="tooltip" class="text-decoration-none">
+      {% translate 'DRF' %}
+    </abbr>
+  </strong>
+  <span class="fw-bold text-dark">}</span>
+  <span class="fw-bold text-danger">]</span>
+</a>
