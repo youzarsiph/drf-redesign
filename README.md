@@ -67,7 +67,8 @@ INSTALLED_APPS = [
 
 Optionally, overwrite the templates `drf_redesign/branding.html` and
 `drf_redesign/nav-items.html` in your application to replace the default
-branding and navbar menu items.
+branding and navbar menu items. If you want to change the default window
+title, replace `drf_redesign/title.html`, too.
 
 That's it! You're ready to go. 😎
 
