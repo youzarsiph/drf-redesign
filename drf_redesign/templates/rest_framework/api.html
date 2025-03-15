@@ -17,9 +17,19 @@
 {% endblock %}
 
 <style>
-  {% if code_style %}
-    {{ code_style }}
-  {% endif %}
+  {
+    % if code_style %
+  }
+
+    {
+      {
+      code_style
+    }
+  }
+
+    {
+    % endif %
+  }
 
   .dropdown-toggle::after {
     content: none;
@@ -117,6 +127,7 @@
 
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="navbar-nav me-auto">
+                {% block userlinks %}
                 <li class="nav-item">
                   <a href="https://www.django-rest-framework.org/" class="nav-link d-flex align-items-center gap-3">
                     <i class="bi bi-house-fill"></i>
@@ -144,7 +155,9 @@
                     {% translate "Redesign" %}
                   </a>
                 </li>
+                {% endblock %}
               </ul>
+
               <ul class="navbar-nav gap-lg-4">
                 <li class="nav-item dropdown">
                   <a href="#" class="nav-link d-flex align-items-center justify-content-between gap-3"
@@ -419,12 +432,13 @@
               class="prettyprint mb-0"><code class="language-http" style="padding: 0; background-color: transparent;">{{ request.method }} {{ request.get_full_path }}</code></pre>
           </div>
         </div>
-          
+
 
         <div class="card card-body grid gap-4 rounded-4 p-4 shadow-sm">
           <h3 class="card-title mb-0">Response</h3>
           <div class="response-info" aria-label="{% translate 'response info' %}">
-            <pre class="prettyprint mb-0 d-grid"><code class="language-http" style="padding: 0; background-color: transparent;">HTTP {{ response.status_code }} {{ response.status_text }}
+            <pre
+              class="prettyprint mb-0 d-grid"><code class="language-http" style="padding: 0; background-color: transparent;">HTTP {{ response.status_code }} {{ response.status_text }}
 {% for key, val in response_headers|items %}{{ key }}: {{ val|break_long_headers|urlize }}
 {% endfor %}</code><code class="language-json" style="padding: 0; background-color: transparent;">{{ content|urlize }}</code></pre>
           </div>

@@ -3,6 +3,7 @@
 [![Ruff](https://github.com/youzarsiph/drf-redesign/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/ruff.yml)
 [![Publish](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml)
 [![Django CI](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/drf-redesign)
 
 **drf-redesign** is a project that gives a fresh look to the browse-able API of Django REST Framework using Bootstrap 5.
 
