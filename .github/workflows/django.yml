@@ -9,28 +9,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install Dependencies
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+
+      - name: Install dependencies
         run: |
+          python -m venv .venv
+          source .venv/bin/activate
           python -m pip install --upgrade pip
-          pip install django djangorestframework drf-redesign
-      - name: Create Django Project
+          python -m pip install poetry
+          poetry install
+
+      - name: Create a Django project and configure settings
         run: |
-          python -m django startproject project
-      - name: Add drf_redesign to INSTALLED_APPS
+          source .venv/bin/activate
+          python -m django startproject mysite
+          mv drf_redesign mysite/drf_redesign
+          cd mysite
+          echo "INSTALLED_APPS += ['drf_redesign', 'rest_framework']" >> mysite/settings.py
+
+      - name: Run checks
         run: |
-          echo "INSTALLED_APPS += ['drf_redesign', 'rest_framework']" >> project/settings.py
-      - name: Run Tests
-        run: |
-          cd project
-          python manage.py test
+          source .venv/bin/activate
+          cd mysite
+          python manage.py check

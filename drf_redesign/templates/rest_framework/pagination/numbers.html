@@ -1,61 +1,61 @@
 {% load i18n %}
 
-<nav aria-label="Pagination" class="d-flex align-items-center">
-  <ol class="pagination flex-wrap gap-4 mb-0">
+<nav aria-label="Pagination">
+  <ol class="pagination flex-wrap gap-2 justify-content-center mb-0">
     {% if previous_url %}
-      <li class="page-item">
-        <a class="page-link rounded-3 shadow-sm d-flex align-item-center gap-4" href="{{ previous_url }}" aria-label="Previous">
-          <i class="bi bi-chevron-left"></i>
-          {% translate 'Prev' %}
-        </a>
-      </li>
+    <li class="page-item">
+      <a class="page-link rounded-3 shadow-sm" href="{{ previous_url }}" aria-label="Previous">
+        <i class="mx-2 bi bi-chevron-left"></i>
+        {% translate 'Prev' %}
+      </a>
+    </li>
     {% else %}
-      <li class="page-item disabled">
-        <a class="page-link rounded-3 shadow-sm d-flex align-item-center gap-4" href="#" aria-label="Previous">
-          <i class="bi bi-chevron-left"></i>
-          {% translate 'Prev' %}
-        </a>
-      </li>
+    <li class="page-item disabled">
+      <a class="page-link rounded-3 shadow-sm" href="#" aria-label="Previous">
+        <i class="mx-2 bi bi-chevron-left"></i>
+        {% translate 'Prev' %}
+      </a>
+    </li>
     {% endif %}
 
     {% for page_link in page_links %}
-      {% if page_link.is_break %}
-        <li class="page-item disabled">
-          <a class="page-link rounded-3 shadow-sm" href="#">
-            <span aria-hidden="true">&hellip;</span>
-          </a>
-        </li>
-      {% else %}
-        {% if page_link.is_active %}
-          <li class="page-item active" aria-current="page">
-            <a class="page-link rounded-3 shadow-sm" href="{{ page_link.url }}">
-              {{ page_link.number }}
-            </a>
-          </li>
-        {% else %}
-          <li class="page-item">
-            <a class="page-link rounded-3 shadow-sm" href="{{ page_link.url }}">
-              {{ page_link.number }}
-            </a>
-          </li>
-        {% endif %}
-      {% endif %}
+    {% if page_link.is_break %}
+    <li class="page-item disabled">
+      <a class="page-link rounded-3 shadow-sm" href="#">
+        <span aria-hidden="true">&hellip;</span>
+      </a>
+    </li>
+    {% else %}
+    {% if page_link.is_active %}
+    <li class="page-item active" aria-current="page">
+      <a class="page-link rounded-3 shadow-sm" href="{{ page_link.url }}">
+        {{ page_link.number }}
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link rounded-3 shadow-sm" href="{{ page_link.url }}">
+        {{ page_link.number }}
+      </a>
+    </li>
+    {% endif %}
+    {% endif %}
     {% endfor %}
 
     {% if next_url %}
-      <li class="page-item">
-        <a class="page-link rounded-3 shadow-sm d-flex align-item-center gap-4" href="{{ next_url }}" aria-label="Next">
-          {% translate 'Next' %}
-          <i class="bi bi-chevron-right"></i>
-        </a>
-      </li>
+    <li class="page-item">
+      <a class="page-link rounded-3 shadow-sm" href="{{ next_url }}" aria-label="Next">
+        {% translate 'Next' %}
+        <i class="mx-2 bi bi-chevron-right"></i>
+      </a>
+    </li>
     {% else %}
-      <li class="page-item disabled">
-        <a class="page-link rounded-3 shadow-sm d-flex align-item-center gap-4" href="#" aria-label="Next">
-          {% translate 'Next' %}
-          <i class="bi bi-chevron-right"></i>
-        </a>
-      </li>
+    <li class="page-item disabled">
+      <a class="page-link rounded-3 shadow-sm" href="#" aria-label="Next">
+        {% translate 'Next' %}
+        <i class="mx-2 bi bi-chevron-right"></i>
+      </a>
+    </li>
     {% endif %}
   </ol>
 </nav>

@@ -1,5 +1,6 @@
 # 🚀 drf-redesign
 
+[![Black](https://github.com/youzarsiph/drf-redesign/actions/workflows/black.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/black.yml)
 [![Ruff](https://github.com/youzarsiph/drf-redesign/actions/workflows/ruff.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/ruff.yml)
 [![Publish](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/python-publish.yml)
 [![Django CI](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml/badge.svg)](https://github.com/youzarsiph/drf-redesign/actions/workflows/django.yml)

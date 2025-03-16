@@ -1,4 +1,4 @@
-""" Customizes template tags from DRF """
+"""Customizes template tags from DRF"""
 
 from django.template import Library
 from django.urls import NoReverseMatch, reverse
@@ -22,10 +22,8 @@ def optional_login(request):
 
     snippet = """
     <a class="dropdown-item" href="{href}?next={next}">
-      <strong class="d-flex align-items-center gap-3">
-        <i class="bi bi-box-arrow-in-right"></i>
-        Login
-      </strong>
+      <i class="mx-2 bi bi-box-arrow-in-right"></i>
+      <strong>Login</strong>
     </a>"""
 
     snippet = format_html(
@@ -56,10 +54,8 @@ def optional_logout(request, user, csrf_token):
       <input type="hidden" name="csrfmiddlewaretoken" value="{csrf_token}">
     
       <button type="submit" class="dropdown-item">
-        <strong class="d-flex align-items-center gap-3">
-          <i class="bi bi-box-arrow-right"></i>
-          Logout
-        </strong>
+        <i class="mx-2 bi bi-box-arrow-right"></i>
+        <strong>Logout</strong>
       </button>
     </form>"""
 

@@ -1,10 +1,10 @@
-name: Ruff
+name: Black
 
 on: [push]
 
 jobs:
 
-  lint:
+  format:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,9 +18,9 @@ jobs:
           python -m venv .venv
           source .venv/bin/activate
           python -m pip install --upgrade pip
-          python -m pip install ruff
+          python -m pip install black
 
-      - name: Analyzing the code with Ruff
+      - name: Checking the code format with Black
         run: |
           source .venv/bin/activate
-          python -m ruff check $(git ls-files '*.py')
+          python -m black --check $(git ls-files '*.py')

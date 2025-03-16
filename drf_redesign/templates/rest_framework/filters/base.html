@@ -12,14 +12,12 @@
       <div class="modal-body">
         <div class="d-grid gap-4">
           {% for element in elements %}
-            <div>
-              {{ element }}
-            </div>
+          <div>
+            {{ element }}
+          </div>
           {% endfor %}
-          <button type="button" class="btn btn-outline-secondary shadow-sm" data-bs-dismiss="modal">
-            <span class="d-flex align-item-center justify-content-center gap-4">
-              <i class="bi bi-x-lg"></i>
-              {% translate "Cancel" %}
+          <button type="button" class="btn btn-primary shadow-sm" data-bs-dismiss="modal">
+            {% translate "Close" %}
             </span>
           </button>
         </div>

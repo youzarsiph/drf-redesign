@@ -4,18 +4,11 @@
 <form class="form-inline">
   <div class="form-group">
     <div class="input-group">
-      <input
-        type="search"
-        class="form-control"
-        name="{{ param }}"
-        value="{{ term }}"
-        placeholder="{% translate 'Type here to search...' %}"
-      />
+      <input type="search" class="form-control" name="{{ param }}" value="{{ term }}"
+        placeholder="{% translate 'Type here to search...' %}" />
       <button class="btn btn-outline-primary shadow-sm" type="submit">
-        <span class="d-flex align-items-center gap-4">
-          <i class="bi bi-search"></i>
-          {% translate "Search" %}
-        </span>
+        <i class="mx-2 bi bi-search"></i>
+        {% translate "Search" %}
       </button>
     </div>
   </div>

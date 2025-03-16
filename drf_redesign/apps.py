@@ -1,4 +1,4 @@
-""" AppConf for drf_redesign """
+"""AppConf for drf_redesign"""
 
 from django.apps import AppConfig
 
