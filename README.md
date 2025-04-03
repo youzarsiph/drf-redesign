@@ -38,11 +38,11 @@ We're sure you'll enjoy it as much as we do!
 
 ## Screenshots
 
-![DRF Redesign Dark Mode](assets/img/drf-redesign-dark.jpeg)
-DRF Redesign Dark Mode
+![Root](https://github.com/user-attachments/assets/7b85732d-c5eb-4c6a-a867-ba9b8d39890a)
 
-![DRF Redesign Light Mode](assets/img/drf-redesign-light.jpeg)
-DRF Redesign Light Mode
+![List](https://github.com/user-attachments/assets/3a6b451a-7575-416f-a67f-ff334e70e262)
+
+![Detail](https://github.com/user-attachments/assets/76e6c7f3-aa33-4534-882c-ad6619fd660b)
 
 ## 🛠️ Get started
 
