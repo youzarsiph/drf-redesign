@@ -397,7 +397,7 @@
 
         <div class="response-info" aria-label="{% translate 'response info' %}">
           <pre class="prettyprint mb-0 d-grid"><code class="language-http">HTTP {{ response.status_code }} {{ response.status_text }}
-{% for key, val in response_headers|items %}{{ key }}: {{ val|break_long_headers|urlize }}
+{% for key, val in response_headers|items %}{{ key }}: {{ val|urlize }}
 {% endfor %}</code><code class="language-json">{{ content|urlize }}</code></pre>
         </div>
       </div>
